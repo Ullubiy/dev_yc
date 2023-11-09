@@ -11,16 +11,18 @@
 name: Docker Image CI
 on:
   push:
-    branches: [ main ]
+    branches:
+      - main
   pull_request:
-    branches: [ main ]
+    branches:
+      - main
 jobs:
   build:
-    run-on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Build the Docker image
-        run: docker build . --file Dockerfile --tag myapp:$(date +%s
+        run: docker build . --file Dockerfile --tag myapp:$(date +%s)
   #push_to_registry:
    # name: Push Docker image to Docker Hub
    # runs-on: ubuntu-latest
