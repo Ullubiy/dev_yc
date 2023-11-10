@@ -20,7 +20,7 @@
     build:
       runs-on: ubuntu-latest
       steps:
-        - uses: actions/checkout@2
+        - uses: actions/checkout@v2
   
       #  with
        #     repository: Ullubiy/dv_yc
