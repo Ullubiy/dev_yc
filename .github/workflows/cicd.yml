@@ -21,8 +21,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Git clone
-      - uses: actions/checkout@main
+      - name: Check out the repo
+      - uses: actions/checkout@2
+        with
+            repository: Ullubiy/dv_yc
+            token
       
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag myapp:$(date +%s)
