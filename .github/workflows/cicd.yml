@@ -20,7 +20,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
+      - name: Git clone
       - uses: actions/checkout@v2
+      
       - name: Build the Docker image
         run: docker build . --file Dockerfile --tag myapp:$(date +%s)
   #push_to_registry:
