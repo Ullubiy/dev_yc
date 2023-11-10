@@ -8,21 +8,20 @@
 # You can also reference a tag or branch, but the action may change without warning.
 
 ---
-name: Docker Image CI
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Check out the repo
-      - uses: actions/checkout@2
+  name: Docker Image CI
+  on:
+    push:
+      branches:
+        - main
+    pull_request:
+      branches:
+        - main
+  jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@2
+  
       #  with
        #     repository: Ullubiy/dv_yc
      #       token
