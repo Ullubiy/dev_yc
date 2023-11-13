@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "yandex" {
-  service_account_key_file = "./tf_key.json"
+  service_account_key_file = "./key.json"
   folder_id                = local.folder_id
   zone                     = "ru-central1-a"
 }
@@ -22,11 +22,11 @@ resource "yandex_vpc_subnet" "foo" {
 }
 
 resource "yandex_container_registry" "registry1" {
-  name = "registry1"
+ name = "registry1"
 }
 
 locals {
-  folder_id = "<INSERT YOUR FOLDER ID>"
+  folder_id = "b1gbl1lbae3r08rarpri"
   service-accounts = toset([
     "catgpt-sa",
   ])
@@ -73,7 +73,7 @@ resource "yandex_compute_instance" "catgpt-1" {
     }
     metadata = {
       docker-compose = file("${path.module}/docker-compose.yaml")
-      ssh-keys  = "ubuntu:${file("~/.ssh/devops_training.pub")}"
+      ssh-keys  = "ubuntu:${file("~/.ssh/id.pub")}"
     }
 }
 
